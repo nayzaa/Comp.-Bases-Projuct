@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { MenuComponent } from './menu/menu.component';
@@ -23,10 +23,11 @@ import {HttpModule} from '@angular/http';
     ProductDetailComponent,
     LoginComponent,
     ProductListComponent,
-    ProductAddComponent
+    ProductAddComponent,
+
   ],
   imports: [
-    BrowserModule,AppRoutingModule,HttpModule
+    BrowserModule,AppRoutingModule,HttpModule,FormsModule
   ],
   providers: [ProductDataServerService],
   bootstrap: [AppComponent,HeaderComponent]
