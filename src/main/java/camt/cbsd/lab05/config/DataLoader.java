@@ -63,8 +63,25 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         Product product1 = Product.builder().productName("Prod. #1").productDescription("Test descrption #1").productPrice(1200.25).build();
+        Product product2 = Product.builder().productName("Prod. #2").productDescription("Test descrption #2").productPrice(1201.25).build();
+        Product product3 = Product.builder().productName("Prod. #3").productDescription("Test descrption #3").productPrice(1202.25).build();
+        Product product4 = Product.builder().productName("Prod. #4").productDescription("Test descrption #4").productPrice(1203.25).build();
+        Product product5 = Product.builder().productName("Prod. #5").productDescription("Test descrption #5").productPrice(1204.25).build();
+        Product product6 = Product.builder().productName("Prod. #6").productDescription("Test descrption #6").productPrice(1205.25).build();
+        Product product7 = Product.builder().productName("Prod. #7").productDescription("Test descrption #7").productPrice(1206.25).build();
+        Product product8 = Product.builder().productName("Prod. #8").productDescription("Test descrption #8").productPrice(1207.25).build();
+
+
 
         productDao.addProduct(product1);
+        productDao.addProduct(product2);
+        productDao.addProduct(product3);
+        productDao.addProduct(product4);
+        productDao.addProduct(product5);
+        productDao.addProduct(product6);
+        productDao.addProduct(product7);
+        productDao.addProduct(product8);
+
 //        imageBaseUrl = baseUrl + imageUrl;
 //        Student student1 = Student.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
 //                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
