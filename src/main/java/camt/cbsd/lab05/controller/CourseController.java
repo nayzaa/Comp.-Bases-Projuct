@@ -24,12 +24,12 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    @GetMapping("/course")
+    @GetMapping("/index")
     public ResponseEntity<?> list(){
         return ResponseEntity.ok(courseService.list());
     }
 
-    @PostMapping("/course")
+    @PostMapping("/index")
     public ResponseEntity<?> add(@RequestBody Course course){
         courseService.add(course);
         return ResponseEntity.ok(course);

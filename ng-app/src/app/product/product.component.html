@@ -1,14 +1,14 @@
 <div class="=">
-  <div class="row col-md-4 ">
+  <div class="row col-md-4 " *ngFor="let product of products; let i = index">
     <div class="panel panel-primary col-md-8 col-sm-8" >
       <div class="panel-heading">
-        <h2 class="panel-title">Product 01</h2>
+        <h2 class="panel-title">{{product.productName}}</h2>
       </div>
       <div class="panel-body row" align="center">
         <div class="col-md-12 col-sm-6">
           <img class="img-responsive" src="assets/images/l01.png"  height="300px" width="300px"><br>
-          <h4 style=" color:darkcyan;">Price : 8000$</h4><br>
-          <a routerLink="/detail"><button class='btn btn-primary' >Detail</button></a>
+          <h4 style=" color:darkcyan;">{{product.productPrice}}</h4><br>
+          <a routerLink="/detail"><button class='btn btn-primary' >{{product.productDescription}}</button></a>
           <button class='btn btn-primary' >Add to Cart</button>
         </div>
         <!--(click)="showDetail(product)"-->
@@ -17,42 +17,6 @@
       </div>
     </div>
 
-  </div>
-  <div class="row col-md-4">
-    <div class="panel panel-primary col-md-8 col-sm-8" >
-      <div class="panel-heading">
-        <h2 class="panel-title">Product 02</h2>
-      </div>
-      <div class="panel-body row"  align="center">
-        <div class="col-md-12 col-sm-6">
-          <img class="img-responsive center-block" src="assets/images/l01.png"  height="300px" width="300px"><br>
-          <h4 style=" color:darkcyan;">Price : 8000$</h4><br>
-          <a routerLink="/detail"><button class='btn btn-primary' >Detail</button></a>
-          <button class='btn btn-primary' >Add to Cart</button>
-        </div>
-        <!--(click)="showDetail(product)"-->
-
-
-      </div>
-    </div>
-  </div>
-  <div class="row col-md-4">
-    <div class="panel panel-primary col-md-8 col-sm-8" >
-      <div class="panel-heading">
-        <h2 class="panel-title">Product 03</h2>
-      </div>
-      <div class="panel-body row"  align="center">
-        <div class="col-md-12 col-sm-6">
-          <img class="img-responsive" src="assets/images/l01.png"  height="300px" width="300px"><br>
-          <h4 style=" color:darkcyan;">Price : 8000$</h4><br>
-          <a routerLink="/detail"><button class='btn btn-primary' >Detail</button></a>
-          <button class='btn btn-primary' >Add to Cart</button>
-        </div>
-        <!--(click)="showDetail(product)"-->
-
-
-      </div>
-    </div>
   </div>
 </div>
 
