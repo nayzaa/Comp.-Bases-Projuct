@@ -1,11 +1,8 @@
 package camt.cbsd.lab05.config;
 
-import camt.cbsd.lab05.dao.CourseDao;
 import camt.cbsd.lab05.dao.ProductDao;
 import camt.cbsd.lab05.dao.StudentDao;
-import camt.cbsd.lab05.entity.Course;
 import camt.cbsd.lab05.entity.Product;
-import camt.cbsd.lab05.entity.Student;
 import camt.cbsd.lab05.entity.security.Authority;
 import camt.cbsd.lab05.entity.security.AuthorityName;
 import camt.cbsd.lab05.entity.security.User;
@@ -41,9 +38,6 @@ public class DataLoader implements ApplicationRunner {
     }
 
     @Autowired
-    CourseDao courseDao;
-
-    @Autowired
     ProductDao productDao;
 
     String baseUrl;
@@ -73,14 +67,19 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-        productDao.addProduct(product1);
-        productDao.addProduct(product2);
-        productDao.addProduct(product3);
-        productDao.addProduct(product4);
-        productDao.addProduct(product5);
-        productDao.addProduct(product6);
-        productDao.addProduct(product7);
-        productDao.addProduct(product8);
+        productDao.saveProduct(product1);
+        productDao.saveProduct(product2);
+        productDao.saveProduct(product3);
+        productDao.saveProduct(product4);
+        productDao.saveProduct(product5);
+        productDao.saveProduct(product6);
+        productDao.saveProduct(product7);
+        productDao.saveProduct(product8);
+
+        product8.setProductName("Prod. #8 (new)");
+        productDao.saveProduct(product8);
+
+        productDao.deleteProduct(product8);
 
 //        imageBaseUrl = baseUrl + imageUrl;
 //        Student student1 = Student.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")

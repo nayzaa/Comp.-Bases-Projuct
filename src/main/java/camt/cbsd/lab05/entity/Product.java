@@ -24,10 +24,10 @@ public class Product {
     @GeneratedValue(strategy= GenerationType.AUTO)
     long id;
 
-    String productId;
     String productName;
     String productDescription;
     String productImage;
+    int productAmount;
     double productPrice;
 
 

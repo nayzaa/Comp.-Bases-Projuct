@@ -1,7 +1,6 @@
 package camt.cbsd.lab05.dao;
 
 import camt.cbsd.lab05.entity.Product;
-import camt.cbsd.lab05.entity.Student;
 import camt.cbsd.lab05.repository.ProductRepository;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,25 +17,23 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
-    public List<Product> getProducts() {
-
-        return Lists.newArrayList(productRepository.findAll());
-
-    }
-
-    @Override
     public Product findById(long id) {
         return productRepository.findById(id);
     }
 
     @Override
-    public Product addProduct(Product product) {
+    public Product saveProduct(Product product) {
         return productRepository.save(product);
     }
 
     @Override
     public List<Product> list() {
         return Lists.newArrayList(productRepository.findAll());
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        productRepository.delete(product);
     }
 
     @Override

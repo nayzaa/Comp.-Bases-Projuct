@@ -24,8 +24,8 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product add(Product product) {
-        return productDao.addProduct(product);
+    public Product save(Product product) {
+        return productDao.saveProduct(product);
     }
 
     @Override
@@ -33,5 +33,11 @@ public class ProductServiceImpl implements ProductService{
         Product product = productDao.findById(id);
         return product;
     }
+
+    @Override
+    public void delete(Product product) {
+        productDao.deleteProduct(product);
+    }
+
 
 }

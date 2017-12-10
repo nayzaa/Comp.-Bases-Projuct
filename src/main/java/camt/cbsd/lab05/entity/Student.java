@@ -41,16 +41,16 @@ public class Student {
     @OneToOne(mappedBy = "student")
     @JsonManagedReference
     User user;
-
-    @ManyToMany
-    List<Course> enrolledCourse;
-
-    public List<Course> addCourse(Course course) {
-        enrolledCourse = Optional.ofNullable(enrolledCourse).orElse(new ArrayList<>());
-        enrolledCourse.add(course);
-        return enrolledCourse;
-
-    }
+//
+//    @ManyToMany
+//    List<Course> enrolledCourse;
+//
+//    public List<Course> addCourse(Course course) {
+//        enrolledCourse = Optional.ofNullable(enrolledCourse).orElse(new ArrayList<>());
+//        enrolledCourse.add(course);
+//        return enrolledCourse;
+//
+//    }
 
     @JsonView(View.Login.class)
     public List<Authority> getAuthorities(){

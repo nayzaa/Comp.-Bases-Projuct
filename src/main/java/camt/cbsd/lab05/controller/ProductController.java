@@ -23,7 +23,7 @@ public class ProductController {
 
     @PostMapping("/product")
     public ResponseEntity<?> add(@RequestBody Product product){
-        productService.add(product);
+        productService.save(product);
         return ResponseEntity.ok(product);
     }
 
@@ -36,5 +36,30 @@ public class ProductController {
             //http code 204
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
+    }
+
+    @PostMapping("product/{id}")
+    public ResponseEntity getStudent(@PathVariable("id")long id,@RequestBody Product product){
+        Product oldProduct = productService.findById(id);
+        if(product!=null && oldProduct!=null){
+            long oldProductId = oldProduct.getId();
+            oldProduct = product;
+            oldProduct.setId(oldProductId);
+            productService.save(oldProduct);
+            return ResponseEntity.ok(oldProduct);
+        }else{
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        }
+    }
+
+    @PostMapping("product/delete/{id}")
+    public ResponseEntity deleteStudent(@PathVariable("id")long id){
+        Product product = productService.findById(id);
+        if(product!=null){
+            productService.delete(product);
+            return ResponseEntity.ok(product);
+        }else{
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        }
     }
 }
