@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import {ProductDataServerService} from './service/product-data-server.service';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import {ProductDataServerService} from './service/product-data-server.service';
     ProductAddComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule
+    BrowserModule,AppRoutingModule,HttpModule
   ],
   providers: [ProductDataServerService],
   bootstrap: [AppComponent,HeaderComponent]
