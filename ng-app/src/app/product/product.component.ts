@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../product';
+
 import {ProductDataServerService} from '../service/product-data-server.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Product} from "app/product";
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class ProductComponent implements OnInit {
 
   products:Product[]
-  constructor(private productDataServerService:ProductDataServerService,private route:ActivatedRoute) { }
+  constructor(private productDataServerService:ProductDataServerService,private route:ActivatedRoute,private router:Router) { }
 
   result:String;
 
@@ -23,6 +24,11 @@ export class ProductComponent implements OnInit {
 
     this.productDataServerService.getProduct()
       .subscribe(products=>this.products = products);
+
+
+  }
+  showDetail(product: Product){
+    this.router.navigate(['/detail',product.productId]);
   }
 
 }

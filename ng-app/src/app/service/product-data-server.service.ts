@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
-import {Http,Headers, RequestOptions} from '@angular/http';
-import {Product} from '../../product';
+import {Http,Headers, RequestOptions,Response} from '@angular/http';
+import {Product} from '../product';
 
 @Injectable()
 export class ProductDataServerService {
@@ -25,5 +25,19 @@ export class ProductDataServerService {
         return Observable.throw(new Error(error.status))
       })
 
+  }
+  getProductId(id: number) {
+    let product:Product;
+    return this.http.get('http://localhost:8080/product/'+id)
+      .map((res:Response) => {
+        if (res){
+          if (res.status === 200){
+            return res.json();
+          }
+          if (res.status === 204){
+            return null;
+          }
+        }
+      });
   }
 }

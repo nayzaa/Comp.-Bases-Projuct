@@ -56,14 +56,14 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        Product product1 = Product.builder().productName("Prod. #1").productDescription("Test descrption #1").productPrice(1200.25).build();
-        Product product2 = Product.builder().productName("Prod. #2").productDescription("Test descrption #2").productPrice(1201.25).build();
-        Product product3 = Product.builder().productName("Prod. #3").productDescription("Test descrption #3").productPrice(1202.25).build();
-        Product product4 = Product.builder().productName("Prod. #4").productDescription("Test descrption #4").productPrice(1203.25).build();
-        Product product5 = Product.builder().productName("Prod. #5").productDescription("Test descrption #5").productPrice(1204.25).build();
-        Product product6 = Product.builder().productName("Prod. #6").productDescription("Test descrption #6").productPrice(1205.25).build();
-        Product product7 = Product.builder().productName("Prod. #7").productDescription("Test descrption #7").productPrice(1206.25).build();
-        Product product8 = Product.builder().productName("Prod. #8").productDescription("Test descrption #8").productPrice(1207.25).build();
+        Product product1 = Product.builder().productId(1).productName("Prod. #1").productDescription("Test descrption #1").productPrice(1200.25).build();
+        Product product2 = Product.builder().productId(2).productName("Prod. #2").productDescription("Test descrption #2").productPrice(1201.25).build();
+        Product product3 = Product.builder().productId(3).productName("Prod. #3").productDescription("Test descrption #3").productPrice(1202.25).build();
+        Product product4 = Product.builder().productId(4).productName("Prod. #4").productDescription("Test descrption #4").productPrice(1203.25).build();
+        Product product5 = Product.builder().productId(5).productName("Prod. #5").productDescription("Test descrption #5").productPrice(1204.25).build();
+        Product product6 = Product.builder().productId(6).productName("Prod. #6").productDescription("Test descrption #6").productPrice(1205.25).build();
+        Product product7 = Product.builder().productId(7).productName("Prod. #7").productDescription("Test descrption #7").productPrice(1206.25).build();
+        Product product8 = Product.builder().productId(8).productName("Prod. #8").productDescription("Test descrption #8").productPrice(1207.25).build();
 
 
 
