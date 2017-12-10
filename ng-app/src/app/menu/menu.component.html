@@ -1,21 +1,48 @@
-<ul class="nav nav-pills nav-stacked">
-  <li role="presentation" *ngIf="hsaRole('ADMIN,USER')" routerLinkActive="active"><a routerLink="/list">List</a></li>
-  <li role="presentation" *ngIf="hsaRole('ADMIN')" routerLinkActive="active"><a routerLink="/add">Add</a></li>
-  <li role="presentation" *ngIf="hsaRole('ADMIN,USER')" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" (click)="onViewClick()">
-      View <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li *ngFor="let student of students">
-        <a  (click)="showDetail(student)">
-          {{student.name}}
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li role="presentation" *ngIf="hsaRole('ADMIN,USER')" routerLinkActive="active"><a routerLink="/courses">Course list</a></li>
-  <li role="presentation" *ngIf="hsaRole('ADMIN,USER')" routerLinkActive="active"><a routerLink="/add-course">Add Course</a></li>
+  <div class="row col-md-10">
 
-</ul>
+    <div class="Member" align="center">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="navbar navbar-light" style="color: darkblue; background-color: lightskyblue;"><h4 class="navbar-brand">Menu</h4></li>
+        <li style="color: darkblue">Search interval price</li><br>
+        <div class="input-group col-md-8" >
+          <span class="input-group-addon">$</span>
+          <input type="text"  class="form-control" maxlength="8"><br>
+        </div>
+        To
+        <div class="input-group col-md-8">
+          <span class="input-group-addon">$</span>
+          <input type="text"  class="form-control" maxlength="8">
+        </div>
+        <br>
+        <button type="button" class="btn btn-info">Search</button><br>
+        <br>
+      </ul>
+    </div>
+
+      <div class="shop_keeper">
+        <ul class="nav nav-pills nav-stacked">
+        <li class="navbar navbar-light" style="color: cornflowerblue; background-color: #e3f2fd;"><h4 class="navbar-brand">Shopkeeper Menu</h4></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/list">List product</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/product-add">Add product</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/history">History payment</a></li>
+          <br>
+        </ul>
+      </div>
+
+    <div class="admin">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="navbar navbar-light" style="color:black; background-color:gainsboro;"><h4 class="navbar-brand">Admin menu</h4></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/add-user">Add user</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/edit-user">Edit user</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/delete-user">Delete user</a></li>
+      </ul>
+    </div>
+
+
+
+  </div>
+
+
+
 
 
