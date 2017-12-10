@@ -1,8 +1,10 @@
 package camt.cbsd.lab05.config;
 
 import camt.cbsd.lab05.dao.CourseDao;
+import camt.cbsd.lab05.dao.ProductDao;
 import camt.cbsd.lab05.dao.StudentDao;
 import camt.cbsd.lab05.entity.Course;
+import camt.cbsd.lab05.entity.Product;
 import camt.cbsd.lab05.entity.Student;
 import camt.cbsd.lab05.entity.security.Authority;
 import camt.cbsd.lab05.entity.security.AuthorityName;
@@ -41,6 +43,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     CourseDao courseDao;
 
+    @Autowired
+    ProductDao productDao;
+
     String baseUrl;
     String imageUrl;
     String imageBaseUrl;
@@ -56,42 +61,46 @@ public class DataLoader implements ApplicationRunner {
     @Transactional
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        imageBaseUrl = baseUrl + imageUrl;
-        Student student1 = Student.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
-                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
-                .penAmount(0).description("The most beloved one").build();
-        Student student2 = Student.builder().studentId("SE-002").name("Prayuth").surname("The minister")
-                .gpa(3.59).image(imageBaseUrl + "tu.jpg").feature(false)
-                .penAmount(15).description("The great man ever!!!!").build();
-        Student student3 = Student.builder().studentId("SE-003").name("Jurgen").surname("Kloop")
-                .gpa(2.15).image(imageBaseUrl + "Kloop.gif").feature(true)
-                .penAmount(2).description("The man for the Kop").build();
 
-        Course course1 = Course.builder().courseId("953331").courseName("CBSD").build();
-        Course course2 = Course.builder().courseId("953323").courseName("Software Construction").build();
-        Course course3 = Course.builder().courseId("953499").courseName("Software Project").build();
+        Product product1 = Product.builder().productName("Prod. #1").productDescription("Test descrption #1").productPrice(1200.25).build();
 
-        courseDao.add(course1);
-        courseDao.add(course2);
-        courseDao.add(course3);
-        studentDao.addStudent(student1);
-        studentDao.addStudent(student2);
-        studentDao.addStudent(student3);
-
-        student1.addCourse(course1);
-        student1.addCourse(course2);
-        student2.addCourse(course2);
-        student2.addCourse(course3);
-        student3.addCourse(course1);
-        student3.addCourse(course3);
-        securitySetup();
-
-        student1.setUser(user1);
-        user1.setStudent(student1);
-        student2.setUser(user2);
-        user2.setStudent(student2);
-        student3.setUser(user3);
-        user3.setStudent(student3);
+        productDao.addProduct(product1);
+//        imageBaseUrl = baseUrl + imageUrl;
+//        Student student1 = Student.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
+//                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
+//                .penAmount(0).description("The most beloved one").build();
+//        Student student2 = Student.builder().studentId("SE-002").name("Prayuth").surname("The minister")
+//                .gpa(3.59).image(imageBaseUrl + "tu.jpg").feature(false)
+//                .penAmount(15).description("The great man ever!!!!").build();
+//        Student student3 = Student.builder().studentId("SE-003").name("Jurgen").surname("Kloop")
+//                .gpa(2.15).image(imageBaseUrl + "Kloop.gif").feature(true)
+//                .penAmount(2).description("The man for the Kop").build();
+//
+//        Course course1 = Course.builder().courseId("953331").courseName("CBSD").build();
+//        Course course2 = Course.builder().courseId("953323").courseName("Software Construction").build();
+//        Course course3 = Course.builder().courseId("953499").courseName("Software Project").build();
+//
+//        courseDao.add(course1);
+//        courseDao.add(course2);
+//        courseDao.add(course3);
+//        studentDao.addStudent(student1);
+//        studentDao.addStudent(student2);
+//        studentDao.addStudent(student3);
+//
+//        student1.addCourse(course1);
+//        student1.addCourse(course2);
+//        student2.addCourse(course2);
+//        student2.addCourse(course3);
+//        student3.addCourse(course1);
+//        student3.addCourse(course3);
+//        securitySetup();
+//
+//        student1.setUser(user1);
+//        user1.setStudent(student1);
+//        student2.setUser(user2);
+//        user2.setStudent(student2);
+//        student3.setUser(user3);
+//        user3.setStudent(student3);
     }
 
 
