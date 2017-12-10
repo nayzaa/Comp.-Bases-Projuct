@@ -13,6 +13,7 @@ import { ProductAddComponent } from './product-add/product-add.component';
 import {ProductDataServerService} from './service/product-data-server.service';
 import {HttpModule} from '@angular/http';
 import {AuthenticationService} from './service/authentication.service';
+import { ShoppingCartComponent } from './product/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {AuthenticationService} from './service/authentication.service';
     LoginComponent,
     ProductListComponent,
     ProductAddComponent,
+    ShoppingCartComponent,
 
   ],
   imports: [
