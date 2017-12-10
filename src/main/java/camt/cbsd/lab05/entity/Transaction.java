@@ -1,6 +1,5 @@
 package camt.cbsd.lab05.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Data
@@ -18,19 +18,11 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
-public class Product {
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     long id;
 
-    String productName;
-    String productDescription;
-    String productImage;
-    int productAmount;
-    double productPrice;
-
-
-
-
+    Date date;
 }
