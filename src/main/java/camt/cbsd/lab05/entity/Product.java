@@ -23,7 +23,6 @@ public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     long id;
-    int productId;
     String productName;
     String productDescription;
     String productImage;

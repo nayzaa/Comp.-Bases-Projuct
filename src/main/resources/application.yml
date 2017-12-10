@@ -10,7 +10,8 @@ spring:
 server:
   baseUrl: http://localhost:8080/
   imageUrl: images/
-  imageServerDir : C:/images/lab07/
+  imageServerDir : C:/images/compbaseproj/
+  productImgUrl: product/
 jwt:
   header: Authorization
   secret: mySecret

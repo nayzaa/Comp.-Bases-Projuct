@@ -1,3 +1,4 @@
+///<reference path="../../../node_modules/rxjs/Observable.d.ts"/>
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ProductDataServerService} from '../service/product-data-server.service';
 import {Route, Router} from '@angular/router';
@@ -25,7 +26,7 @@ export class ProductAddComponent implements OnInit {
         if (result != null) {
           this.router.navigate(['/index']);
         } else {
-          alert('Error in adding the student');
+          alert('Error in adding the product');
         }
       });
 
