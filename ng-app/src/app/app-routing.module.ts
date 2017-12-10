@@ -9,7 +9,7 @@ import {ProductAddComponent} from './product-add/product-add.component';
 
 const appRoutes:Routes=[
   {path:'index',component:ProductComponent},
-  {path:'detail:/id',component:ProductDetailComponent},
+  {path:'detail/:id',component:ProductDetailComponent},
   {path:'login',component:LoginComponent},
   {path:'list',component:ProductListComponent},
   {path:'product-add',component:ProductAddComponent},

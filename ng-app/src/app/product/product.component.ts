@@ -11,7 +11,7 @@ import {Product} from "app/product";
 })
 export class ProductComponent implements OnInit {
 
-  products:Product[]
+  products:Product[];
   constructor(private productDataServerService:ProductDataServerService,private route:ActivatedRoute,private router:Router) { }
 
   result:String;
