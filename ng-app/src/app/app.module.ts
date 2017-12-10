@@ -12,6 +12,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import {ProductDataServerService} from './service/product-data-server.service';
 import {HttpModule} from '@angular/http';
+import {AuthenticationService} from './service/authentication.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import {HttpModule} from '@angular/http';
   imports: [
     BrowserModule,AppRoutingModule,HttpModule,FormsModule
   ],
-  providers: [ProductDataServerService],
+  providers: [ProductDataServerService,AuthenticationService],
   bootstrap: [AppComponent,HeaderComponent]
 })
 export class AppModule { }

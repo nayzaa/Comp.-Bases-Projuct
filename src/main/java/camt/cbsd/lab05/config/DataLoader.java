@@ -109,7 +109,7 @@ public class DataLoader implements ApplicationRunner {
 //        student2.addCourse(course3);
 //        student3.addCourse(course1);
 //        student3.addCourse(course3);
-//        securitySetup();
+        securitySetup();
 //
 //        student1.setUser(user1);
 //        user1.setStudent(student1);

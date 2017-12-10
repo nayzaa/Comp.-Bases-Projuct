@@ -19,7 +19,7 @@
       </ul>
     </div>
 
-      <div class="shop_keeper">
+      <div class="shop_keeper" *ngIf="hasRole('ADMIN')">
         <ul class="nav nav-pills nav-stacked">
         <li class="navbar navbar-light" style="color: cornflowerblue; background-color: #e3f2fd;"><h4 class="navbar-brand">Shopkeeper Menu</h4></li>
         <li role="presentation" routerLinkActive="active"><a routerLink="/list">List product</a></li>
@@ -29,7 +29,7 @@
         </ul>
       </div>
 
-    <div class="admin">
+    <div class="admin" *ngIf="hasRole('ADMIN')">
       <ul class="nav nav-pills nav-stacked">
         <li class="navbar navbar-light" style="color:black; background-color:gainsboro;"><h4 class="navbar-brand">Admin menu</h4></li>
         <li role="presentation" routerLinkActive="active"><a routerLink="/add-user">Add user</a></li>
