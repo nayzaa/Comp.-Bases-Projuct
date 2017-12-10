@@ -66,7 +66,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/course").permitAll()
                 .antMatchers("/auth/**","/h2-console/**","/refresh","/images/**").permitAll()
 
-                .anyRequest().authenticated();
+//                .anyRequest().authenticated();
+        .anyRequest().permitAll();
 
         // Custom JWT based security filter
         httpSecurity
