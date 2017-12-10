@@ -12,6 +12,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import {ProductDataServerService} from './service/product-data-server.service';
 import {HttpModule} from '@angular/http';
+import { ShoppingCartComponent } from './product/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {HttpModule} from '@angular/http';
     LoginComponent,
     ProductListComponent,
     ProductAddComponent,
+    ShoppingCartComponent,
 
   ],
   imports: [
