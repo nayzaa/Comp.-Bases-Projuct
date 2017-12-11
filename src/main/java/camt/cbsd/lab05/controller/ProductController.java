@@ -66,10 +66,10 @@ public class ProductController {
         }
     }
 
-    @PostMapping("product/delete/{id}")
-    public ResponseEntity deleteStudent(@PathVariable("id")long id){
-        Product product = productService.findById(id);
-        if(product!=null){
+    @PostMapping("product/delete")
+    public ResponseEntity deleteProduct(@RequestBody Product product){
+        Product product1 = productService.findById(product.getId());
+        if(product1!=null){
             productService.delete(product);
             return ResponseEntity.ok(product);
         }else{
