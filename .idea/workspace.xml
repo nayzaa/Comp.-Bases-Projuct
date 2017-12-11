@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1edae4a-fa0b-4ac2-a4e9-8daa2852b81c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng-app/src/app/product/product.component.html" afterPath="$PROJECT_DIR$/ng-app/src/app/product/product.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng-app/src/app/product/product.component.ts" afterPath="$PROJECT_DIR$/ng-app/src/app/product/product.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng-app/src/app/service/product-data-server.service.ts" afterPath="$PROJECT_DIR$/ng-app/src/app/service/product-data-server.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/META-INF/spring-configuration-metadata.json" afterPath="$PROJECT_DIR$/out/production/classes/META-INF/spring-configuration-metadata.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/cart/cart-view/cart-view.component.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/cart/cart-view/cart-view.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/cart/cart-view/cart-view.component.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/cart/cart-view/cart-view.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/cart/cart.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/item.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/service/cart.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ng-app/src/app/service/cart.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/entity/Transaction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ng-app/src/app/app.module.ts" afterPath="$PROJECT_DIR$/ng-app/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/entity/Product.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -25,44 +31,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="menu.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng-app/src/app/menu/menu.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="product.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ng-app/src/app/product/product.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state relative-caret-position="170">
+              <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
               <folding>
-                <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1513032338923" expanded="true" signature="1183:1360" ph="..." />
+                <marker date="1513032338923" expanded="true" signature="1183:1420" ph="..." />
+                <marker date="1513032338923" expanded="true" signature="1183:1431" ph="..." />
+                <marker date="1513032338923" expanded="true" signature="1183:1441" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-add.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng-app/src/app/product-add/product-add.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-add.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ng-app/src/app/product-add/product-add.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -71,44 +50,84 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="439">
-              <caret line="135" column="17" lean-forward="true" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="51" />
+              <caret line="143" column="5" lean-forward="false" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
               <folding>
-                <element signature="e#978#979#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1096#1097#0" expanded="true" />
-                <element signature="e#1159#1160#0" expanded="true" />
+                <marker date="1513032338960" expanded="true" signature="5236:5242" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/dao/ProductDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding>
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#776#777#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#959#960#0" expanded="true" />
-                <element signature="e#1008#1009#0" expanded="true" />
-                <marker date="1513024257144" expanded="true" signature="1468:1476" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-data-server.service.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product-data-server.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ng-app/src/app/service/product-data-server.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="108" column="84" lean-forward="false" selection-start-line="108" selection-start-column="84" selection-end-line="108" selection-end-column="84" />
+            <state relative-caret-position="288">
+              <caret line="122" column="1" lean-forward="false" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+              <folding>
+                <marker date="1513032338930" expanded="true" signature="4000:4002" ph="//..." />
+                <marker date="1513032338930" expanded="true" signature="4000:4004" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng-app/src/app/cart/cart.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="7" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart-view.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng-app/src/app/cart/cart-view/cart-view.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart-view.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng-app/src/app/cart/cart-view/cart-view.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product-data-server.service.spec.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng-app/src/app/service/product-data-server.service.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ng-app/src/app/product.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="8" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ng-app/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -117,32 +136,10 @@
       <file leaf-file-name="product.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ng-app/src/app/product/product.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="509">
+              <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/service/ProductService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/service/ProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding>
-                <marker date="1513024257156" expanded="true" signature="1281:1289" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -599,7 +596,6 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/service/StudentServiceImpl.java" />
         <option value="$PROJECT_DIR$/ng-app/src/app/menu/menu.component.ts" />
-        <option value="$PROJECT_DIR$/ng-app/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/repository/StudentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/repository/AccountRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/dao/StudentDao.java" />
@@ -640,6 +636,7 @@
         <option value="$PROJECT_DIR$/ng-app/src/app/product/product.component.ts" />
         <option value="$PROJECT_DIR$/ng-app/src/app/product/product.component.html" />
         <option value="$PROJECT_DIR$/ng-app/src/app/service/product-data-server.service.ts" />
+        <option value="$PROJECT_DIR$/ng-app/src/app/app.module.ts" />
       </list>
     </option>
   </component>
@@ -704,7 +701,7 @@
               <item name="ng-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="cart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Comp.-Bases-Projuct" type="b2602c69:ProjectViewProjectNode" />
@@ -712,15 +709,8 @@
               <item name="ng-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Comp.-Bases-Projuct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Comp.-Bases-Projuct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ng-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="cart" type="462c0819:PsiDirectoryNode" />
+              <item name="cart-view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Comp.-Bases-Projuct" type="b2602c69:ProjectViewProjectNode" />
@@ -729,14 +719,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Comp.-Bases-Projuct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Comp.-Bases-Projuct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="ng-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="product-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Comp.-Bases-Projuct" type="b2602c69:ProjectViewProjectNode" />
@@ -1056,7 +1038,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83994000" />
+    <option name="totallyTimeSpent" value="84041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1078,7 +1060,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22968581" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22993493" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="22" side_tool="false" content_ui="tabs" />
@@ -1131,13 +1113,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ng-app/src/app/payment/payment/payment.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ng-app/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1184,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,13 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ng-app/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ng-app/src/app/login/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1349,7 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,7 +1360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1456,9 +1421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <marker date="1513024257156" expanded="true" signature="1281:1289" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1487,17 +1450,19 @@
             <element signature="e#895#896#0" expanded="true" />
             <element signature="e#959#960#0" expanded="true" />
             <element signature="e#1008#1009#0" expanded="true" />
-            <marker date="1513024257144" expanded="true" signature="1468:1476" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ng-app/src/app/product/product.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        <state relative-caret-position="170">
+          <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
           <folding>
-            <element signature="n#style#0;n#h4#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1513032338923" expanded="true" signature="1183:1360" ph="..." />
+            <marker date="1513032338923" expanded="true" signature="1183:1420" ph="..." />
+            <marker date="1513032338923" expanded="true" signature="1183:1431" ph="..." />
+            <marker date="1513032338923" expanded="true" signature="1183:1441" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1505,20 +1470,17 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/camt/cbsd/lab05/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
-          <caret line="135" column="17" lean-forward="true" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="51" />
+          <caret line="143" column="5" lean-forward="false" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
           <folding>
-            <element signature="e#978#979#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
+            <marker date="1513032338960" expanded="true" signature="5236:5242" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ng-app/src/app/product/product.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="17" />
+        <state relative-caret-position="509">
+          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -1527,8 +1489,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ng-app/src/app/service/product-data-server.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="108" column="84" lean-forward="false" selection-start-line="108" selection-start-column="84" selection-end-line="108" selection-end-column="84" />
+        <state relative-caret-position="288">
+          <caret line="122" column="1" lean-forward="false" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+          <folding>
+            <marker date="1513032338930" expanded="true" signature="4000:4002" ph="//..." />
+            <marker date="1513032338930" expanded="true" signature="4000:4004" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng-app/src/app/service/cart.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ng-app/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding />
         </state>
       </provider>

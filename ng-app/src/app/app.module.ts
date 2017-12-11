@@ -22,6 +22,8 @@ import { CreditCardComponent } from './payment/paypal/paypal.component';
 import { AddShopkeeperComponent } from './add-shopkeeper/add-shopkeeper.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 
+import { CartViewComponent } from './cart/cart-view/cart-view.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     CreditCardComponent,
     AddShopkeeperComponent,
     AddCustomerComponent,
-
+    CartViewComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule,HttpModule,FormsModule
