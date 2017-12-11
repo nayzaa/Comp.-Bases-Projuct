@@ -49,11 +49,19 @@ export class ProductDataServerService {
         }
       });
   }
-  // deleteProduct(id: number){
-  //   return this.http.delete("http://localhost:8080/product/delete/"+id).toPromise()
-  //     .then((res)=>res.json())
-  //     .catch(this.handleError);
-  // }
+
+  deleteProduct(product:Product){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers, method: 'post'});
+    let body = JSON.stringify(product);
+    return this.http.post('http://localhost:8080/product/delete', body, options)
+      .map(res => {
+        return res.json()
+      })
+      .catch((error: any) => {
+        return Observable.throw(new Error(error.status))
+      })
+  }
 
 
   private handleError(error:any):Promise<any>{

@@ -2,9 +2,9 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "camt.cbsd.lab05.config.DataLoader",
+      "sourceType": "camt.cbsd.lab05.service.AccountServiceImpl",
       "name": "server",
-      "type": "camt.cbsd.lab05.config.DataLoader"
+      "type": "camt.cbsd.lab05.service.AccountServiceImpl"
     },
     {
       "sourceType": "camt.cbsd.lab05.dao.AccountDaoImpl",
@@ -12,9 +12,9 @@
       "type": "camt.cbsd.lab05.dao.AccountDaoImpl"
     },
     {
-      "sourceType": "camt.cbsd.lab05.service.AccountServiceImpl",
+      "sourceType": "camt.cbsd.lab05.config.DataLoader",
       "name": "server",
-      "type": "camt.cbsd.lab05.service.AccountServiceImpl"
+      "type": "camt.cbsd.lab05.config.DataLoader"
     }
   ],
   "properties": [
