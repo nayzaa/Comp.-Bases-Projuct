@@ -14,6 +14,7 @@ import {ProductDataServerService} from './service/product-data-server.service';
 import {HttpModule} from '@angular/http';
 import {AuthenticationService} from './service/authentication.service';
 import { ShoppingCartComponent } from './product/shopping-cart/shopping-cart.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ShoppingCartComponent } from './product/shopping-cart/shopping-cart.com
     ProductListComponent,
     ProductAddComponent,
     ShoppingCartComponent,
+    ProductEditComponent,
 
   ],
   imports: [

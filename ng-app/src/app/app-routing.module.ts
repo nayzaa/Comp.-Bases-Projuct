@@ -6,6 +6,7 @@ import {LoginComponent} from './login/login.component';
 import {ProductListComponent} from './product-list/product-list.component';
 import {ProductAddComponent} from './product-add/product-add.component';
 import {ShoppingCartComponent} from './product/shopping-cart/shopping-cart.component';
+import {ProductEditComponent} from './product-edit/product-edit.component';
 
 
 const appRoutes:Routes=[
@@ -15,7 +16,8 @@ const appRoutes:Routes=[
   {path:'list',component:ProductListComponent},
   {path:'product-add',component:ProductAddComponent},
   {path:'',redirectTo:'/index',pathMatch:'full'},
-  {path:'cart',component:ShoppingCartComponent}
+  {path:'cart',component:ShoppingCartComponent},
+  {path:'edit/:id',component:ProductEditComponent}
 ]
 
 @NgModule({

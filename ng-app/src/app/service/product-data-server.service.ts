@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {Http,Headers, RequestOptions,Response} from '@angular/http';
 import {Product} from '../product';
+import {reject} from 'q';
 
 @Injectable()
 export class ProductDataServerService {
@@ -33,6 +34,7 @@ export class ProductDataServerService {
 
 
   }
+
   getProductId(id: number) {
     let product:Product;
     return this.http.get('http://localhost:8080/product/'+id)
@@ -47,4 +49,33 @@ export class ProductDataServerService {
         }
       });
   }
+  // deleteProduct(id: number){
+  //   return this.http.delete("http://localhost:8080/product/delete/"+id).toPromise()
+  //     .then((res)=>res.json())
+  //     .catch(this.handleError);
+  // }
+
+
+  private handleError(error:any):Promise<any>{
+    console.error('Ah error occurred',error);
+    return Promise.reject(error.message || error);
+  }
+
+  editProduct(product:Product):Observable<Product>{
+      let headers = new Headers({'Content-Type': 'application/json'});
+      let options = new RequestOptions({headers: headers, method: 'post'});
+      let body = JSON.stringify(product);
+      return this.http.post('http://localhost:8080/product', body, options)
+        .map(res => {
+          return res.json()
+        })
+        .catch((error: any) => {
+          return Observable.throw(new Error(error.status))
+        })
+
+
+
+  }
+
+
 }
