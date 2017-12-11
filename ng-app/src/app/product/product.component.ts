@@ -16,6 +16,8 @@ export class ProductComponent implements OnInit {
 
   result:String;
   searchText:string;
+  low : number;
+  high : number;
 
   ngOnInit() {
     this.route.queryParams
@@ -43,16 +45,24 @@ export class ProductComponent implements OnInit {
   }
 
   search: string;
+  onSearcgPrice(){
+    this.productDataServerService.findPrice(this.low,this.high) .subscribe(products => this.products = products,
+      (error  ) => {
+        if (error.status===401){
 
-  findProductByDescrription(){
-    this.productDataServerService.findProduct(this.search)
-      .subscribe(products => this.products = products,
-        (error  ) => {
-          if (error.status===401){
-
-            this.router.navigate(['login'],{queryParams:{source:'student'}});
-          }
-        });
+          this.router.navigate(['login'],{queryParams:{source:'student'}});
+        }
+      });
   }
+  // findProductByDescrription(){
+  //   this.productDataServerService.findProduct(this.search)
+  //     .subscribe(products => this.products = products,
+  //       (error  ) => {
+  //         if (error.status===401){
+  //
+  //           this.router.navigate(['login'],{queryParams:{source:'student'}});
+  //         }
+  //       });
+  // }
 
 }

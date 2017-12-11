@@ -95,19 +95,29 @@ export class ProductDataServerService {
     let headers=new Headers({
       'Content-type':'application/json'
     });
-    return this.http.get('http://localhost:8080/product/search/name',{headers:headers,search:
+    return this.http.get('http://localhost:8080/product/search/text/'+searchText,{headers:headers,search:
     params})
       .map(res => res.json());
 
   }
-
-  findProduct(search:string){
-    let product: Product;
+  findPrice(low:any,high:any){
     let params: URLSearchParams = new URLSearchParams();
-    params.set('search', search);
-    let headers=new Headers({'Content-type':'application/json'});
-    return this.http.get('http://localhost:8080/product/search/description',{headers:headers,search:
+    params.set('search', low);
+    let headers=new Headers({
+      'Content-type':'application/json'
+    });
+    return this.http.get('http://localhost:8080/product/search/price/'+low+'/'+high,{headers:headers,search:
     params})
       .map(res => res.json());
   }
+
+  // findProduct(search:string){
+  //   let product: Product;
+  //   let params: URLSearchParams = new URLSearchParams();
+  //   params.set('search', search);
+  //   let headers=new Headers({'Content-type':'application/json'});
+  //   return this.http.get('http://localhost:8080/product/search/description',{headers:headers,search:
+  //   params})
+  //     .map(res => res.json());
+  // }
 }
