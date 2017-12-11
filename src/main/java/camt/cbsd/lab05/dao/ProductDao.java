@@ -10,5 +10,7 @@ public interface ProductDao {
     Product saveProduct(Product product);
     List<Product> list();
     void deleteProduct(Product product);
+    List<Product> searchProduct(String search);
+    List<Product> searchProduct(int low,int high);
     Integer size();
 }

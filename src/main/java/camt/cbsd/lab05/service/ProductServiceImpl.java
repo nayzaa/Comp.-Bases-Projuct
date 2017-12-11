@@ -34,9 +34,24 @@ public class ProductServiceImpl implements ProductService{
         return product;
     }
 
+
+
     @Override
     public void delete(Product product) {
         productDao.deleteProduct(product);
+    }
+
+    @Override
+    public List<Product> searchProduct(String search) {
+        if(search==null||search.equals(""))
+            return productDao.list();
+        return productDao.searchProduct(search);
+    }
+
+    @Override
+    public List<Product> searchProduct(int low, int high) {
+        if(high==0) high = Integer.MAX_VALUE;
+        return productDao.searchProduct(low, high);
     }
 
 
