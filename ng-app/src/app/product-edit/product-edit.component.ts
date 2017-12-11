@@ -22,14 +22,10 @@ export class ProductEditComponent implements OnInit {
       });
   }
   @ViewChild('fileInput') inputEl: ElementRef;
-  onFileChange(event, product: any) {
-    var filename = event.target.files[0].name;
-    console.log(filename);
-    product.productImage = filename;
-  }
   edit(product:Product){
     let result : Product;
-    this.productDataServerService.editProduct(product)
+    let inputEl: HTMLInputElement = this.inputEl.nativeElement;
+    this.productDataServerService.editProduct(product, inputEl.files.item(0))
       .subscribe(resultProduct => {
         result = resultProduct
         if (result != null) {
@@ -39,6 +35,11 @@ export class ProductEditComponent implements OnInit {
         }
       });
 
+  }
+  onFileChange(event, product: any) {
+    var filename = event.target.files[0].name;
+    console.log(filename);
+    product.productImage = filename;
   }
 
 }

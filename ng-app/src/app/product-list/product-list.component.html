@@ -16,7 +16,7 @@
         <td>{{product.productPrice}}$</td>
         <td>
           <button class='btn btn-warning' (click)="edit(product)">Edit</button>
-          <button class="btn btn-danger" >
+          <button class="btn btn-danger" (click)="delete(product)"  >
             <span class="glyphicon glyphicon-remove"></span>
           </button>
 

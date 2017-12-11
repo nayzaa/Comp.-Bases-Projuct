@@ -1,0 +1,28 @@
+<div class="row col-md-10">
+<div class="payment" >
+  <ul class="nav nav-pills nav-stacked">
+    <li class="navbar navbar-light" style="color: cornflowerblue; background-color: #e3f2fd;"><h4 class="navbar-brand">Payment</h4></li>
+    <div class="col-md-1">
+      <li [ngClass]="{'active':tranferMoney}"><button class="btn btn-primary" (click)="tranferMoneyFunc()">Tranfer money</button></li>
+    </div>
+    <div class="col-md-1 col-sm-offset-1 pull-left">
+      <li [ngClass]="{'active':paypal}"><button class="btn btn-primary" (click)="paypalfunc()">Credit Card</button></li>
+    </div>
+
+    <br>
+  </ul>
+  <div class="col-md-12">
+    <div>
+    <span [hidden]='tranferMoney'>
+      <div><app-tranfer-money></app-tranfer-money></div>
+    </span>
+    </div>
+    <div>
+    <span [hidden]='paypal'>
+      <div><app-paypal></app-paypal></div>
+    </span>
+    </div>
+  </div>
+
+</div>
+</div>

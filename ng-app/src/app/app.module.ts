@@ -15,6 +15,12 @@ import {HttpModule} from '@angular/http';
 import {AuthenticationService} from './service/authentication.service';
 import { ShoppingCartComponent } from './product/shopping-cart/shopping-cart.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ConfirmCheckoutComponent } from './payment/confirm-checkout/confirm-checkout.component';
+import { PaymentComponent } from './payment/payment/payment.component';
+import { TranferMoneyComponent } from './payment/tranfer-money/tranfer-money.component';
+import { CreditCardComponent } from './payment/paypal/paypal.component';
+import { AddShopkeeperComponent } from './add-shopkeeper/add-shopkeeper.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 
 @NgModule({
@@ -29,6 +35,12 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ProductAddComponent,
     ShoppingCartComponent,
     ProductEditComponent,
+    ConfirmCheckoutComponent,
+    PaymentComponent,
+    TranferMoneyComponent,
+    CreditCardComponent,
+    AddShopkeeperComponent,
+    AddCustomerComponent,
 
   ],
   imports: [
