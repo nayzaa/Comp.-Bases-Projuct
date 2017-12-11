@@ -20,6 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalTime;
+import java.util.List;
 
 @RestController
 public class ProductController {
@@ -120,5 +121,25 @@ public class ProductController {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
+    }
+
+    @GetMapping("/product/search/text/{text}")
+    public ResponseEntity<?> queryProduct(@PathVariable("text") String query) {
+    List<Product> products = productService.searchProduct(query);
+    if (products != null)
+        return ResponseEntity.ok(products);
+    else
+        //http code 204
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @GetMapping("/product/search/price/{low}/{high}")
+    public ResponseEntity<?> queryProduct(@PathVariable("low") int low,@PathVariable("high") int high) {
+        List<Product> products = productService.searchProduct(low,high);
+        if (products != null)
+            return ResponseEntity.ok(products);
+        else
+            //http code 204
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

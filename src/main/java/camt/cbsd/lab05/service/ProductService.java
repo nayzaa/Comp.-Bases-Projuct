@@ -10,4 +10,6 @@ public interface ProductService {
     Product save(Product product);
     Product findById(long id);
     void delete(Product product);
+    List<Product> searchProduct(String search);
+    List<Product> searchProduct(int low,int high);
 }

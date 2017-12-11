@@ -31,4 +31,17 @@ export class ProductComponent implements OnInit {
     this.router.navigate(['/detail',product.id]);
   }
 
+  search: string;
+
+  findProductByDescrription(){
+    this.productDataServerService.findProduct(this.search)
+      .subscribe(products => this.products = products,
+        (error  ) => {
+          if (error.status===401){
+
+            this.router.navigate(['login'],{queryParams:{source:'student'}});
+          }
+        });
+  }
+
 }

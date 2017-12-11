@@ -37,6 +37,16 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
+    public List<Product> searchProduct(String search) {
+        return productRepository.findByProductNameIgnoreCaseContainingOrProductDescriptionIgnoreCaseContaining(search,search);
+    }
+
+    @Override
+    public List<Product> searchProduct(int low, int high) {
+        return productRepository.findByProductPriceBetween((double)low,(double)high);
+    }
+
+    @Override
     public Integer size() {
         return (int)productRepository.count();
     }
