@@ -28,10 +28,10 @@
         <br><br>
         <li class="col-md-3 " routerLinkActive="active"> <a routerLink="/cart" class="btn btn-info btn-md">
           <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Cart</a></li>
-        <li class="col-md-3" routerLinkActive="active"><a routerLink="/login" class="btn btn-info btn-md">
+        <li class="col-md-3" routerLinkActive="active"><a routerLink="/login" class="btn btn-info btn-md" *ngIf="!(hasRole('SHOPKEEPER')||hasRole('ADMIN')||hasRole('CUSTOMER'))">
           <span class="glyphicon glyphicon-log-in"></span>&nbsp;Login
         </a></li>
-        <li class="col-md-3 "><a routerLink="" class="btn btn-info btn-md"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout
+        <li class="col-md-3 "><a routerLink="" (click)="logout()" class="btn btn-info btn-md" *ngIf="hasRole('SHOPKEEPER')||hasRole('ADMIN')||hasRole('CUSTOMER')"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout
         </a></li>
 
 

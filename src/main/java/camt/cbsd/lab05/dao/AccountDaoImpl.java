@@ -1,21 +1,20 @@
 package camt.cbsd.lab05.dao;
 
 
-import camt.cbsd.lab05.entity.Student;
+import camt.cbsd.lab05.entity.Account;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
 
 @Profile("firstDataSource")
 @ConfigurationProperties(prefix = "server")
 @Repository
-public class StudentDaoImpl implements StudentDao {
+public class AccountDaoImpl implements AccountDao {
 
-    List<Student> students;
+    List<Account> accounts;
     String imageBaseUrl;
     String baseUrl;
     String imageUrl;
@@ -26,20 +25,20 @@ public class StudentDaoImpl implements StudentDao {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-    public List<Student> getStudents(){
-        return students;
+    public List<Account> getAccounts(){
+        return accounts;
     }
 
     @Override
-    public Student findById(long id) {
-        return students.stream().filter(s -> s.getId() == id).findFirst().orElse(null);
+    public Account findById(long id) {
+        return accounts.stream().filter(s -> s.getId() == id).findFirst().orElse(null);
     }
 
     @Override
-    public Student addStudent(Student student) {
-        student.setImage(this.imageBaseUrl+student.getImage());
-        if (students.add(student)){
-            return student;
+    public Account addAccount(Account account) {
+        account.setImage(this.imageBaseUrl+ account.getImage());
+        if (accounts.add(account)){
+            return account;
         }else
         {
             return null;
@@ -47,31 +46,31 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public Student findByUsername(String username) {
+    public Account findByUsername(String username) {
         return null;
     }
 
     @Override
     public Integer size() {
-        return students.size();
+        return accounts.size();
     }
 
     @PostConstruct
     protected void init(){
 //        this.imageBaseUrl = this.baseUrl + this.imageUrl;
-//        students = new ArrayList<>();
-//        Student student = new Student(1, "SE-001", "Mitsuha", "Miyamizu",
+//        accounts = new ArrayList<>();
+//        Account account = new Account(1, "SE-001", "Mitsuha", "Miyamizu",
 //                2.15, imageBaseUrl +"mitsuha.gif", true, 0,
 //                "The most beloved one",null);
-//        students.add(student);
-//        student = new Student(2, "SE-002", "Prayuth", "The minister",
+//        accounts.add(account);
+//        account = new Account(2, "SE-002", "Prayuth", "The minister",
 //                3.59, imageBaseUrl+ "tu.jpg", false, 15,
 //                "The great man ever!!!!",null);
-//        students.add(student);
-//        student = new Student(3, "SE-003", "Jurgen", "Kloop",
+//        accounts.add(account);
+//        account = new Account(3, "SE-003", "Jurgen", "Kloop",
 //                2.15, imageBaseUrl + "Kloop.gif", true, 2,
 //                "The man for the Kop",null);
-//        students.add(student);
+//        accounts.add(account);
     }
 
 }

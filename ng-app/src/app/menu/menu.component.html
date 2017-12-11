@@ -1,6 +1,6 @@
   <div class="row col-md-10">
 
-    <div class="Member" align="center">
+    <div class="Member" align="center" *ngIf="!(hasRole('SHOPKEEPER')||hasRole('ADMIN'))">
       <ul class="nav nav-pills nav-stacked">
         <li class="navbar navbar-light" style="color: darkblue; background-color: lightskyblue;"><h4 class="navbar-brand">Menu</h4></li>
         <li style="color: darkblue">Search interval price</li><br>
@@ -19,7 +19,7 @@
       </ul>
     </div>
 
-      <div class="shop_keeper" *ngIf="hasRole('ADMIN')">
+      <div class="shop_keeper" *ngIf="hasRole('SHOPKEEPER')">
         <ul class="nav nav-pills nav-stacked">
         <li class="navbar navbar-light" style="color: cornflowerblue; background-color: #e3f2fd;"><h4 class="navbar-brand">Shopkeeper Menu</h4></li>
         <li role="presentation" routerLinkActive="active"><a routerLink="/list">List product</a></li>

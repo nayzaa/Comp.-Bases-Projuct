@@ -1,22 +1,19 @@
 package camt.cbsd.lab05.service;
 
-import camt.cbsd.lab05.dao.StudentDao;
-import camt.cbsd.lab05.entity.Student;
-import org.hibernate.Hibernate;
+import camt.cbsd.lab05.dao.AccountDao;
+import camt.cbsd.lab05.entity.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 
 @ConfigurationProperties(prefix = "server")
 @Service
-public class StudentServiceImpl implements StudentService {
+public class AccountServiceImpl implements AccountService {
     String imageBaseUrl;
     String baseUrl;
     String imageUrl;
@@ -34,30 +31,30 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Autowired
-    StudentDao studentDao;
-    public List<Student> getStudents(){
+    AccountDao accountDao;
+    public List<Account> getStudents(){
 
-        return studentDao.getStudents();
+        return accountDao.getAccounts();
     }
 
     @Override
     @Transactional
-    public Student findById(long id) {
-        Student student = studentDao.findById(id);
-//        Hibernate.initialize(student.getEnrolledCourse());
-        return student;
+    public Account findById(long id) {
+        Account account = accountDao.findById(id);
+//        Hibernate.initialize(account.getEnrolledCourse());
+        return account;
     }
 
     @Override
-    public Student addStudent(Student student) {
-        return studentDao.addStudent(student);
+    public Account addAccount(Account account) {
+        return accountDao.addAccount(account);
     }
 
     @Transactional
     @Override
-    public Student getStudentForTransfer(String username) {
-        Student student = studentDao.findByUsername(username);
-//        Hibernate.initialize(student.getAuthorities());
-        return student;
+    public Account getStudentForTransfer(String username) {
+        Account account = accountDao.findByUsername(username);
+//        Hibernate.initialize(account.getAuthorities());
+        return account;
     }
 }

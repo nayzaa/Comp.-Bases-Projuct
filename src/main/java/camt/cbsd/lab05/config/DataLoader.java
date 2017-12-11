@@ -1,7 +1,8 @@
 package camt.cbsd.lab05.config;
 
 import camt.cbsd.lab05.dao.ProductDao;
-import camt.cbsd.lab05.dao.StudentDao;
+import camt.cbsd.lab05.dao.AccountDao;
+import camt.cbsd.lab05.entity.Account;
 import camt.cbsd.lab05.entity.Product;
 import camt.cbsd.lab05.entity.security.Authority;
 import camt.cbsd.lab05.entity.security.AuthorityName;
@@ -23,7 +24,7 @@ import java.util.Date;
 @ConfigurationProperties(prefix = "server")
 @Component
 public class DataLoader implements ApplicationRunner {
-    StudentDao studentDao;
+    AccountDao accountDao;
     User user1,user2,user3;
 
     @Autowired
@@ -32,8 +33,8 @@ public class DataLoader implements ApplicationRunner {
     AuthorityRepository authorityRepository;
 
     @Autowired
-    public void setStudentDao(StudentDao studentDao) {
-        this.studentDao = studentDao;
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
 
     }
 
@@ -81,16 +82,16 @@ public class DataLoader implements ApplicationRunner {
 
         productDao.deleteProduct(product8);
 
-//        imageBaseUrl = baseUrl + imageUrl;
-//        Student student1 = Student.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
-//                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
-//                .penAmount(0).description("The most beloved one").build();
-//        Student student2 = Student.builder().studentId("SE-002").name("Prayuth").surname("The minister")
-//                .gpa(3.59).image(imageBaseUrl + "tu.jpg").feature(false)
-//                .penAmount(15).description("The great man ever!!!!").build();
-//        Student student3 = Student.builder().studentId("SE-003").name("Jurgen").surname("Kloop")
-//                .gpa(2.15).image(imageBaseUrl + "Kloop.gif").feature(true)
-//                .penAmount(2).description("The man for the Kop").build();
+        imageBaseUrl = baseUrl + imageUrl;
+        Account account1 = Account.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
+                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
+                .penAmount(0).description("The most beloved one").build();
+        Account account2 = Account.builder().studentId("SE-002").name("Prayuth").surname("The minister")
+                .gpa(3.59).image(imageBaseUrl + "tu.jpg").feature(false)
+                .penAmount(15).description("The great man ever!!!!").build();
+        Account account3 = Account.builder().studentId("SE-003").name("Jurgen").surname("Kloop")
+                .gpa(2.15).image(imageBaseUrl + "Kloop.gif").feature(true)
+                .penAmount(2).description("The man for the Kop").build();
 //
 //        Course course1 = Course.builder().courseId("953331").courseName("CBSD").build();
 //        Course course2 = Course.builder().courseId("953323").courseName("Software Construction").build();
@@ -99,33 +100,35 @@ public class DataLoader implements ApplicationRunner {
 //        courseDao.add(course1);
 //        courseDao.add(course2);
 //        courseDao.add(course3);
-//        studentDao.addStudent(student1);
-//        studentDao.addStudent(student2);
-//        studentDao.addStudent(student3);
+        accountDao.addAccount(account1);
+        accountDao.addAccount(account2);
+        accountDao.addAccount(account3);
 //
-//        student1.addCourse(course1);
-//        student1.addCourse(course2);
-//        student2.addCourse(course2);
-//        student2.addCourse(course3);
-//        student3.addCourse(course1);
-//        student3.addCourse(course3);
+//        account1.addCourse(course1);
+//        account1.addCourse(course2);
+//        account2.addCourse(course2);
+//        account2.addCourse(course3);
+//        account3.addCourse(course1);
+//        account3.addCourse(course3);
         securitySetup();
-//
-//        student1.setUser(user1);
-//        user1.setStudent(student1);
-//        student2.setUser(user2);
-//        user2.setStudent(student2);
-//        student3.setUser(user3);
-//        user3.setStudent(student3);
+
+        account1.setUser(user1);
+        user1.setAccount(account1);
+        account2.setUser(user2);
+        user2.setAccount(account2);
+        account3.setUser(user3);
+        user3.setAccount(account3);
     }
 
 
 
     private void securitySetup() {
-        Authority auth1 = Authority.builder().name(AuthorityName.ROLE_USER).build();
-        Authority auth2 = Authority.builder().name(AuthorityName.ROLE_ADMIN).build();
+        Authority auth1 = Authority.builder().name(AuthorityName.ROLE_CUSTOMER).build();
+        Authority auth2 = Authority.builder().name(AuthorityName.ROLE_SHOPKEEPER).build();
+        Authority auth3 = Authority.builder().name(AuthorityName.ROLE_ADMIN).build();
         authorityRepository.save(auth1);
         authorityRepository.save(auth2);
+        authorityRepository.save(auth3);
         user1 = User.builder()
                 .username("admin")
                 .password("admin")
@@ -137,8 +140,8 @@ public class DataLoader implements ApplicationRunner {
                 .build();
 
         user2 = User.builder()
-                .username("user")
-                .password("user")
+                .username("shopkeeper")
+                .password("shopkeeper")
                 .firstname("user")
                 .lastname("user")
                 .email("enabled@user.com")
@@ -146,19 +149,18 @@ public class DataLoader implements ApplicationRunner {
                 .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
         user3 = User.builder()
-                .username("disabled")
-                .password("disabled")
+                .username("customer")
+                .password("customer")
                 .firstname("user")
                 .lastname("user")
                 .email("disabled@user.com")
-                .enabled(false)
+                .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
         user1.setAuthorities(new ArrayList<>());
-        user1.getAuthorities().add(auth1);
-        user1.getAuthorities().add(auth2);
+        user1.getAuthorities().add(auth3);
         user2.setAuthorities(new ArrayList<>());
-        user2.getAuthorities().add(auth1);
+        user2.getAuthorities().add(auth2);
         user3.setAuthorities(new ArrayList<>());
         user3.getAuthorities().add(auth1);
         userRepository .save(user1);

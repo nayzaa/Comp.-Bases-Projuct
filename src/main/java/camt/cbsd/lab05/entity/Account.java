@@ -21,7 +21,7 @@ import java.util.Optional;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
 @JsonIgnoreType
-public class Student {
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
@@ -38,7 +38,7 @@ public class Student {
     int penAmount;
     String description;
 
-    @OneToOne(mappedBy = "student")
+    @OneToOne(mappedBy = "account")
     @JsonManagedReference
     User user;
 //

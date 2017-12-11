@@ -57,18 +57,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 // we don't need CSRF because our token is invulnerable
                 .csrf().disable()
-                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+                .and()
 
                 // don't create session
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+
                 .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers("/course").permitAll()
-                .antMatchers("/auth/**","/h2-console/**","/refresh","/images/**").permitAll()
+//                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/course").permitAll()
+//                .antMatchers("/h2-console/**","/refresh","/images/**").permitAll()
 
-//                .anyRequest().authenticated();
-        .anyRequest().permitAll();
-
+//                .anyRequest().authenticated()
+        .antMatchers("/auth").anonymous()
+//        .anyRequest().permitAll()
+        ;
         // Custom JWT based security filter
         httpSecurity
                 .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);

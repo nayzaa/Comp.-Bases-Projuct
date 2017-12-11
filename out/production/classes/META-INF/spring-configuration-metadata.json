@@ -2,31 +2,31 @@
   "hints": [],
   "groups": [
     {
-      "sourceType": "camt.cbsd.lab05.service.StudentServiceImpl",
-      "name": "server",
-      "type": "camt.cbsd.lab05.service.StudentServiceImpl"
-    },
-    {
       "sourceType": "camt.cbsd.lab05.config.DataLoader",
       "name": "server",
       "type": "camt.cbsd.lab05.config.DataLoader"
     },
     {
-      "sourceType": "camt.cbsd.lab05.dao.StudentDaoImpl",
+      "sourceType": "camt.cbsd.lab05.dao.AccountDaoImpl",
       "name": "server",
-      "type": "camt.cbsd.lab05.dao.StudentDaoImpl"
+      "type": "camt.cbsd.lab05.dao.AccountDaoImpl"
+    },
+    {
+      "sourceType": "camt.cbsd.lab05.service.AccountServiceImpl",
+      "name": "server",
+      "type": "camt.cbsd.lab05.service.AccountServiceImpl"
     }
   ],
   "properties": [
     {
-      "sourceType": "camt.cbsd.lab05.service.StudentServiceImpl",
-      "name": "server.students",
-      "type": "java.util.List<camt.cbsd.lab05.entity.Student>"
+      "sourceType": "camt.cbsd.lab05.dao.AccountDaoImpl",
+      "name": "server.accounts",
+      "type": "java.util.List<camt.cbsd.lab05.entity.Account>"
     },
     {
-      "sourceType": "camt.cbsd.lab05.dao.StudentDaoImpl",
+      "sourceType": "camt.cbsd.lab05.service.AccountServiceImpl",
       "name": "server.students",
-      "type": "java.util.List<camt.cbsd.lab05.entity.Student>"
+      "type": "java.util.List<camt.cbsd.lab05.entity.Account>"
     }
   ]
 }

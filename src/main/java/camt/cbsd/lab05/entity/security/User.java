@@ -1,7 +1,7 @@
 package camt.cbsd.lab05.entity.security;
 
 import camt.cbsd.lab05.config.json.View;
-import camt.cbsd.lab05.entity.Student;
+import camt.cbsd.lab05.entity.Account;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonView;
@@ -66,7 +66,7 @@ public class User {
 
     @OneToOne
     @JsonBackReference
-    Student student;
+    Account account;
 
     @JsonView(View.Login.class)
     @JsonManagedReference

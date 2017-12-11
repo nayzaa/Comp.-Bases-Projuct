@@ -21,7 +21,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     //reset login status
-    this.authenticationService.logout();
+    // this.authenticationService.logout();
+
+    if(this.authenticationService.loggedIn()){
+      this.router.navigate(['index']);
+    }
 
     let source: String;
     this.route.queryParams.subscribe(
