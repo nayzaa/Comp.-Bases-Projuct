@@ -1,3 +1,19 @@
+<div class="search">
+
+  <div class="col-md-4"><input type="text" placeholder="Search" class="form-control"></div>
+  <div class="col-md-1"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-search  "></span></button></div>
+  <div class="col-md-1">
+    <select class="selectpicker show-tick" data-width="fit">
+      <option disabled>Search for</option>
+      <option>Name</option>
+      <option>Description</option>
+      <option>Price</option>
+    </select>
+  </div>
+  <div class="col-md-1"><input type="text" placeholder="From" class="form-control"></div>
+  <div class="col-md-1"><input type="text" placeholder="End" class="form-control"></div>
+  <br><br><br>
+</div>
 <div class="=">
   <div class="row col-md-4 " *ngFor="let product of products; let i = index">
     <div class="panel panel-primary col-md-8 col-sm-8" >
