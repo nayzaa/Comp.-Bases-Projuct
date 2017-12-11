@@ -1,23 +1,23 @@
   <div class="row col-md-10">
 
-    <div class="Member" align="center" *ngIf="!(hasRole('SHOPKEEPER')||hasRole('ADMIN'))">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="navbar navbar-light" style="color: darkblue; background-color: lightskyblue;"><h4 class="navbar-brand">Menu</h4></li>
-        <li style="color: darkblue">Search interval price</li><br>
-        <div class="input-group col-md-8" >
-          <span class="input-group-addon">$</span>
-          <input type="text"  class="form-control" maxlength="8"><br>
-        </div>
-        To
-        <div class="input-group col-md-8">
-          <span class="input-group-addon">$</span>
-          <input type="text"  class="form-control" maxlength="8">
-        </div>
-        <br>
-        <button type="button" class="btn btn-info">Search</button><br>
-        <br>
-      </ul>
-    </div>
+    <!--<div class="Member" align="center" *ngIf="!(hasRole('SHOPKEEPER')||hasRole('ADMIN'))">-->
+      <!--<ul class="nav nav-pills nav-stacked">-->
+        <!--<li class="navbar navbar-light" style="color: darkblue; background-color: lightskyblue;"><h4 class="navbar-brand">Menu</h4></li>-->
+        <!--<li style="color: darkblue">Search interval price</li><br>-->
+        <!--<div class="input-group col-md-8" >-->
+          <!--<span class="input-group-addon">$</span>-->
+          <!--<input type="text"  class="form-control" maxlength="8"><br>-->
+        <!--</div>-->
+        <!--To-->
+        <!--<div class="input-group col-md-8">-->
+          <!--<span class="input-group-addon">$</span>-->
+          <!--<input type="text"  class="form-control" maxlength="8">-->
+        <!--</div>-->
+        <!--<br>-->
+        <!--<button type="button" class="btn btn-info">Search</button><br>-->
+        <!--<br>-->
+      <!--</ul>-->
+    <!--</div>-->
 
       <div class="shop_keeper" *ngIf="hasRole('SHOPKEEPER')">
         <ul class="nav nav-pills nav-stacked">
