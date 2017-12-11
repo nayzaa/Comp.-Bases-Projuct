@@ -90,6 +90,18 @@ export class ProductDataServerService {
 
 
   }
+  findProduct(searchText:string){
+    let product: Product;
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('searchText', searchText);
+    let headers=new Headers({
+      'Content-type':'application/json'
+    });
+    return this.http.get('http://localhost:8080/product/search/name',{headers:headers,search:
+    params})
+      .map(res => res.json());
+
+  }
 
 
 }

@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
   constructor(private productDataServerService:ProductDataServerService,private route:ActivatedRoute,private router:Router) { }
 
   result:String;
+  searchText:string;
 
   ngOnInit() {
     this.route.queryParams
@@ -29,6 +30,16 @@ export class ProductComponent implements OnInit {
   }
   showDetail(product: Product){
     this.router.navigate(['/detail',product.id]);
+  }
+  onSearch(){
+    this.productDataServerService.findProduct(this.searchText)
+      .subscribe(products => this.products = products,
+        (error  ) => {
+          if (error.status===401){
+
+            this.router.navigate(['login'],{queryParams:{source:'student'}});
+          }
+        });
   }
 
 }
