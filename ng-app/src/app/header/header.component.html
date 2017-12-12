@@ -26,7 +26,7 @@
     <div class="col-md-3">
       <ul class="feature">
         <br><br>
-        <li class="col-md-3 " routerLinkActive="active"> <a routerLink="/cart" class="btn btn-info btn-md">
+        <li class="col-md-3 " routerLinkActive="active"> <a routerLink="/cart" class="btn btn-info btn-md" *ngIf="!(hasRole('SHOPKEEPER')||hasRole('ADMIN'))">
           <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Cart</a></li>
         <li class="col-md-3" routerLinkActive="active"><a routerLink="/login" class="btn btn-info btn-md" *ngIf="!(hasRole('SHOPKEEPER')||hasRole('ADMIN')||hasRole('CUSTOMER'))">
           <span class="glyphicon glyphicon-log-in"></span>&nbsp;Login

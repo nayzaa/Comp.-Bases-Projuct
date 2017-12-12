@@ -36,7 +36,7 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public Account addAccount(Account account) {
-        account.setImage(this.imageBaseUrl+ account.getImage());
+//        account.setImage(this.imageBaseUrl+ account.getImage());
         if (accounts.add(account)){
             return account;
         }else

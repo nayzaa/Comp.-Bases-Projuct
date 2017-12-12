@@ -43,6 +43,7 @@ public class DataLoader implements ApplicationRunner {
 
     String baseUrl;
     String imageUrl;
+    String productImgUrl;
     String imageBaseUrl;
 
     public void setBaseUrl(String baseUrl) {
@@ -53,18 +54,20 @@ public class DataLoader implements ApplicationRunner {
         this.imageUrl = imageUrl;
     }
 
+    public void setProductImgUrl(String productImgUrl){ this.productImgUrl = productImgUrl; }
+
     @Transactional
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        Product product1 = Product.builder().productName("Prod. #1").productDescription("Test descrption #1").productPrice(1200.25).build();
-        Product product2 = Product.builder().productName("Prod. #2").productDescription("Test descrption #2").productPrice(1201.25).build();
-        Product product3 = Product.builder().productName("Prod. #3").productDescription("Test descrption #3").productPrice(1202.25).build();
-        Product product4 = Product.builder().productName("Prod. #4").productDescription("Test descrption #4").productPrice(1203.25).build();
-        Product product5 = Product.builder().productName("Prod. #5").productDescription("Test descrption #5").productPrice(1204.25).build();
-        Product product6 = Product.builder().productName("Prod. #6").productDescription("Test descrption #6").productPrice(1205.25).build();
-        Product product7 = Product.builder().productName("Prod. #7").productDescription("Test descrption #7").productPrice(1206.25).build();
-        Product product8 = Product.builder().productName("Prod. #8").productDescription("Test descrption #8").productPrice(1207.25).build();
+        imageBaseUrl = "http://localhost:8080/images/product/";
+
+        Product product1 = Product.builder().productName("Cat 01").productDescription("I once peed on Nelson Mandela's cat. They had it coming. Some people say I'm the Samwise Gamgee of the group. In time you'll learn how purrfect I am.").productPrice(5000).productImage(imageBaseUrl+"cat01.jpg").build();
+        Product product2 = Product.builder().productName("Cat 02").productDescription("All you need to know about me is I hate cantaloupe with a passion. It wasn't heavily publicized, but I once had a brief relationship with Cheshire Cat. Can you make my wondrous dreams come true?").productPrice(200).productImage(imageBaseUrl+"cat02.jpg").build();
+        Product product3 = Product.builder().productName("Cat 03").productDescription("I'm often referred to as the Cersei Lannister of the group. I'm convinced that the world is flat. One day I'll prove it. I think you'll love me beclaws I have cattitude.").productImage(imageBaseUrl+"cat03.jpg").productPrice(6950).build();
+        Product product4 = Product.builder().productName("Cat 04").productDescription("My friends describe me as wondrous and preposterous. When my owner isn't watching, I steal their brooches and use them for litter paper. I'm not sorry. We're so fur-tunate to have found each other!").productImage(imageBaseUrl+"cat04.jpg").productPrice(655).build();
+        Product product5 = Product.builder().productName("Cat 05").productDescription("My friends describe me as prickly and gullible. My secret indulgence is chocolate. I hope we can be pawmates.").productImage(imageBaseUrl+"cat05.jpg").productPrice(59595).build();
+        Product product6 = Product.builder().productName("Cat 06").productDescription("I'm here to enjoy sitting on your computer and picking on mice. I'm often described as petulant, and I own it. Maybe you and I can be partners in crime.").productImage(imageBaseUrl+"cat06.jpg").productPrice(5850).build();
 
 
 
@@ -74,24 +77,11 @@ public class DataLoader implements ApplicationRunner {
         productDao.saveProduct(product4);
         productDao.saveProduct(product5);
         productDao.saveProduct(product6);
-        productDao.saveProduct(product7);
-        productDao.saveProduct(product8);
 
-        product8.setProductName("Prod. #8 (new)");
-        productDao.saveProduct(product8);
 
-        productDao.deleteProduct(product8);
-
-        imageBaseUrl = baseUrl + imageUrl;
-        Account account1 = Account.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu")
-                .gpa(2.15).image(imageBaseUrl + "mitsuha.gif").feature(true)
-                .penAmount(0).description("The most beloved one").build();
-        Account account2 = Account.builder().studentId("SE-002").name("Prayuth").surname("The minister")
-                .gpa(3.59).image(imageBaseUrl + "tu.jpg").feature(false)
-                .penAmount(15).description("The great man ever!!!!").build();
-        Account account3 = Account.builder().studentId("SE-003").name("Jurgen").surname("Kloop")
-                .gpa(2.15).image(imageBaseUrl + "Kloop.gif").feature(true)
-                .penAmount(2).description("The man for the Kop").build();
+        Account account1 = Account.builder().studentId("SE-001").name("Mitsuha").surname("Miyamizu").build();
+        Account account2 = Account.builder().studentId("SE-002").name("Prayuth").surname("The minister").build();
+        Account account3 = Account.builder().studentId("SE-003").name("Jurgen").surname("Kloop").build();
 //
 //        Course course1 = Course.builder().courseId("953331").courseName("CBSD").build();
 //        Course course2 = Course.builder().courseId("953323").courseName("Software Construction").build();

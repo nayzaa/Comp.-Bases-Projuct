@@ -31,12 +31,6 @@ public class Account {
     String name;
     @JsonView(View.Login.class)
     String surname;
-    double gpa;
-    @JsonView(View.Login.class)
-    String image;
-    boolean feature;
-    int penAmount;
-    String description;
 
     @OneToOne(mappedBy = "account")
     @JsonManagedReference
