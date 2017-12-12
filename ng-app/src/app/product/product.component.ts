@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductDataServerService} from '../service/product-data-server.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Product} from "app/product";
+import {CartService} from '../service/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -12,7 +13,7 @@ import {Product} from "app/product";
 export class ProductComponent implements OnInit {
 
   products:Product[];
-  constructor(private productDataServerService:ProductDataServerService,private route:ActivatedRoute,private router:Router) { }
+  constructor(private productDataServerService:ProductDataServerService,private route:ActivatedRoute,private router:Router,private cartService:CartService) { }
 
   result:String;
   searchText:string;
@@ -54,15 +55,8 @@ export class ProductComponent implements OnInit {
         }
       });
   }
-  // findProductByDescrription(){
-  //   this.productDataServerService.findProduct(this.search)
-  //     .subscribe(products => this.products = products,
-  //       (error  ) => {
-  //         if (error.status===401){
-  //
-  //           this.router.navigate(['login'],{queryParams:{source:'student'}});
-  //         }
-  //       });
-  // }
 
+  addProductToCart(product:Product){
+    this.cartService.addProductToCart(product);
+  }
 }

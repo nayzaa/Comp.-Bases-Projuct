@@ -11,78 +11,75 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-
-      <th scope="row">1</th>
-      <td>Product 01</td>
-      <td>$8000</td>
+    <tr *ngFor="let item of items; let i = index;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.product.productName}}</td>
+      <td>{{item.product.productPrice | number}}</td>
       <td>
         <div class="form-inline">
-          <button type="button" class="btn btn-primary   ">-
-          </button>
-          <input type="text"  class="form-control  " maxlength="3" size="1">
-          <button type="button" class="btn btn-primary   ">+
-          </button>
+          <input type="number"  class="form-control  " maxlength="3" size="1" [(ngModel)]="item.amount" (change)="update(i,item.amount)" min="1">
         </div>
 
 
       </td>
       <td>
         <a class="btn btn-danger btn-sm">
-          <span class="glyphicon glyphicon-remove"></span>
+          <span class="glyphicon glyphicon-remove" (click)="remove(i)"></span>
         </a></td>
 
 
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Product 02</td>
-      <td>$8000</td>
-      <td>
-        <div class="form-inline">
-          <button type="button" class="btn btn-primary   ">-
-          </button>
-          <input type="text"  class="form-control  " maxlength="3" size="1">
-          <button type="button" class="btn btn-primary   ">+
-          </button>
-        </div>
+    <!--<tr>-->
+      <!--<th scope="row">2</th>-->
+      <!--<td>Product 02</td>-->
+      <!--<td>$8000</td>-->
+      <!--<td>-->
+        <!--<div class="form-inline">-->
+          <!--<button type="button" class="btn btn-primary   ">- -->
+          <!--</button>-->
+          <!--<input type="text"  class="form-control  " maxlength="3" size="1">-->
+          <!--<button type="button" class="btn btn-primary   ">+-->
+          <!--</button>-->
+        <!--</div>-->
 
 
-      </td>
-      <td>
+      <!--</td>-->
+      <!--<td>-->
 
-        <a class="btn btn-danger btn-sm">
-          <span class="glyphicon glyphicon-remove"></span>
-        </a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Product 02</td>
-      <td>$8000</td>
-      <td>
-        <div class="form-inline">
-          <button type="button" class="btn btn-primary   ">-
-          </button>
-          <input type="text"  class="form-control  " maxlength="3" size="1">
-          <button type="button" class="btn btn-primary   ">+
-          </button>
-        </div>
+        <!--<a class="btn btn-danger btn-sm">-->
+          <!--<span class="glyphicon glyphicon-remove"></span>-->
+        <!--</a></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+      <!--<th scope="row">3</th>-->
+      <!--<td>Product 02</td>-->
+      <!--<td>$8000</td>-->
+      <!--<td>-->
+        <!--<div class="form-inline">-->
+          <!--<button type="button" class="btn btn-primary   ">- -->
+          <!--</button>-->
+          <!--<input type="text"  class="form-control  " maxlength="3" size="1">-->
+          <!--<button type="button" class="btn btn-primary   ">+-->
+          <!--</button>-->
+        <!--</div>-->
 
 
-      </td>
-      <td>
-        <a class="btn btn-danger btn-sm">
-          <span class="glyphicon glyphicon-remove"></span>
-        </a></td>
-    </tr>
+      <!--</td>-->
+      <!--<td>-->
+        <!--<a class="btn btn-danger btn-sm">-->
+          <!--<span class="glyphicon glyphicon-remove"></span>-->
+        <!--</a></td>-->
+    <!--</tr>-->
 
     <tr>
       <th scope="row"></th>
       <td></td>
-      <td><br>Total : XXX</td>
+      <td><br>Total : {{sum() | number}}</td>
       <td>
         <br>
-        <a routerLink="/confirm"><button class="btn btn-success">Check out </button></a>
+        <a routerLink="/index"><button class="btn btn-primary">Continue Shopping</button></a>
+        <a routerLink="/confirm"><button class="btn btn-success" [disabled]="!hasRole('CUSTOMER')">Check out </button></a>
+        <span *ngIf="!hasRole('CUSTOMER')">Please login before checkout.</span>
       </td>
       <td></td>
 

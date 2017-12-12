@@ -10,30 +10,18 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr *ngFor="let item of items; let i = index;">
 
-      <th scope="row">1</th>
-      <td>Product 01</td>
-      <td>$8000</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Product 02</td>
-      <td>$8000</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Product 02</td>
-      <td>$8000</td>
-      <td>3</td>
+      <th scope="row">{{i}}</th>
+      <td>{{item.product.productName}}</td>
+      <td>{{item.product.productPrice | number}}</td>
+      <td>{{item.amount}}</td>
     </tr>
 
     <tr>
       <th scope="row"></th>
       <td></td>
-      <td><br>Total : XXX</td>
+      <td><br>Total : {{sum() | number}}</td>
       <td>
         <br>
         <a routerLink="/payment"><button class="btn btn-success">Payment method</button></a>

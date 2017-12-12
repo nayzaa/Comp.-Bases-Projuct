@@ -23,6 +23,7 @@ import { AddShopkeeperComponent } from './add-shopkeeper/add-shopkeeper.componen
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 import { CartViewComponent } from './cart/cart-view/cart-view.component';
+import {CartService} from './service/cart.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { CartViewComponent } from './cart/cart-view/cart-view.component';
   imports: [
     BrowserModule,AppRoutingModule,HttpModule,FormsModule
   ],
-  providers: [ProductDataServerService,AuthenticationService],
+  providers: [ProductDataServerService,AuthenticationService,CartService],
   bootstrap: [AppComponent,HeaderComponent]
 })
 export class AppModule { }

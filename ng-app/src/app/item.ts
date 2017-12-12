@@ -1,9 +1,11 @@
+import {Product} from './product';
+
 export class Item {
-  productId:number;
+  product:Product;
   amount:number;
 
-  constructor(productId:number){
-    this.productId = productId;
+  constructor(product:Product){
+    this.product = product;
     this.amount = 1;
   }
 }

@@ -8,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class PaymentComponent implements OnInit {
   constructor() { }
   tranferMoney = true;
-  creditCard = true;
+  paypal = true;
   ngOnInit() {
   }
   tranferMoneyFunc(){
     this.tranferMoney = false;
-    this.creditCard = true;
+    this.paypal = true;
 
   }
   paypalfunc(){
     this.tranferMoney = true;
-    this.creditCard = false;
+    this.paypal = false;
 
   }
 
