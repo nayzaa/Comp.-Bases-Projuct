@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
@@ -153,6 +154,9 @@ public class DataLoader implements ApplicationRunner {
         user2.getAuthorities().add(auth2);
         user3.setAuthorities(new ArrayList<>());
         user3.getAuthorities().add(auth1);
+        user1.setPassword(new BCryptPasswordEncoder().encode(user1.getPassword()));
+        user2.setPassword(new BCryptPasswordEncoder().encode(user2.getPassword()));
+        user3.setPassword(new BCryptPasswordEncoder().encode(user3.getPassword()));
         userRepository .save(user1);
         userRepository .save(user2);
         userRepository .save(user3);
