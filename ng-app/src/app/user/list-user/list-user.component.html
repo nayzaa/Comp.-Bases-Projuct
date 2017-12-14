@@ -4,26 +4,24 @@
   <table class="table table-responsive-md table-hover"  >
     <thead class="thead-light">
     <tr class="table-info">
-      <th scope="col">ID</th>
+      <!--<th scope="col">ID</th>-->
       <th scope="col">Username</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
-      <th scope="col">E-Mail</th>
       <th scope="col">Role</th>
       <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr *ngFor="let accounts of account; let i = index">
 
-      <th scope="row">1</th>
-      <td>test username</td>
-      <td>test f name</td>
-      <td>test l name</td>
-      <td>test e-mail</td>
-      <td>test role</td>
+      <!--<th scope="row">{{accounts.id}}</th>-->
+      <td>{{accounts.user.username}}</td>
+      <td>{{accounts.name}}</td>
+      <td>{{accounts.surname}}</td>
+      <td>{{accounts.user.authorities[0]}}</td>
       <td>
-        <button class="btn btn-danger" (click)="delete(product)"  >
+        <button class="btn btn-danger" (click)="delete(userDetail)"  >
           <span class="glyphicon glyphicon-remove"></span>
         </button>
       </td>

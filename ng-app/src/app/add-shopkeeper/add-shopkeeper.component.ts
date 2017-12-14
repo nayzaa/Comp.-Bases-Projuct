@@ -24,7 +24,7 @@ export class AddShopkeeperComponent implements OnInit {
       .subscribe(resultDetail => {
         result = resultDetail
         if (result != null) {
-          // this.router.navigate(['/index']);
+          this.router.navigate(['/index']);
         } else {
           alert('Error in adding the shopkeeper');
         }
