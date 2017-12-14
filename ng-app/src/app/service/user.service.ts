@@ -34,4 +34,9 @@ export class UserService {
         return Observable.throw(new Error(error.status))
       })
   }
+
+  getAccount():Observable<Account[]>{
+    return this.http.get('http://localhost:8080/account')
+      .map(res => res.json());
+  }
 }

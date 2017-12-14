@@ -33,7 +33,6 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     AccountDao accountDao;
     public List<Account> getAccounts(){
-
         return accountDao.getAccounts();
     }
 
