@@ -3,11 +3,9 @@ package camt.cbsd.lab05.entity;
 import camt.cbsd.lab05.config.json.View;
 import camt.cbsd.lab05.entity.security.Authority;
 import camt.cbsd.lab05.entity.security.User;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.annotation.*;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,9 +16,10 @@ import java.util.Optional;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 @Builder
-@JsonIgnoreType
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIgnoreType
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,7 +32,8 @@ public class Account {
     String surname;
 
     @OneToOne(mappedBy = "account")
-    @JsonManagedReference
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+//    @JsonManagedReference
     User user;
 //
 //    @ManyToMany

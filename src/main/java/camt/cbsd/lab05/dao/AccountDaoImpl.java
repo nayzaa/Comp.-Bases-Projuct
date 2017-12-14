@@ -55,6 +55,11 @@ public class AccountDaoImpl implements AccountDao {
         return accounts.size();
     }
 
+    @Override
+    public void delete(Account account) {
+
+    }
+
     @PostConstruct
     protected void init(){
 //        this.imageBaseUrl = this.baseUrl + this.imageUrl;

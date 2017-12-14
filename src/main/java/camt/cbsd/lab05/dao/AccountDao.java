@@ -11,4 +11,6 @@ public interface AccountDao {
     Account findByUsername(String username);
 
     Integer size();
+
+    void delete(Account account);
 }
