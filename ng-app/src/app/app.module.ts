@@ -24,6 +24,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 import { CartViewComponent } from './cart/cart-view/cart-view.component';
 import {CartService} from './service/cart.service';
+import { ListUserComponent } from './user/list-user/list-user.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {CartService} from './service/cart.service';
     CreditCardComponent,
     AddShopkeeperComponent,
     AddCustomerComponent,
-    CartViewComponent
+    CartViewComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,AppRoutingModule,HttpModule,FormsModule

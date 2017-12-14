@@ -46,7 +46,7 @@ export class ProductComponent implements OnInit {
   }
 
   search: string;
-  onSearcgPrice(){
+  onSearchPrice(){
     this.productDataServerService.findPrice(this.low,this.high) .subscribe(products => this.products = products,
       (error  ) => {
         if (error.status===401){

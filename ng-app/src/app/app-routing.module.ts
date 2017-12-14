@@ -13,6 +13,7 @@ import {TranferMoneyComponent} from './payment/tranfer-money/tranfer-money.compo
 import {CreditCardComponent} from './payment/paypal/paypal.component';
 import {AddShopkeeperComponent} from './add-shopkeeper/add-shopkeeper.component';
 import {AddCustomerComponent} from './add-customer/add-customer.component';
+import {ListUserComponent} from './user/list-user/list-user.component';
 
 
 const appRoutes:Routes=[
@@ -29,7 +30,8 @@ const appRoutes:Routes=[
   {path:'tranfer-money',component:TranferMoneyComponent},
   {path:'credit-card',component:CreditCardComponent},
   {path:'add-shopkeeper',component:AddShopkeeperComponent},
-  {path:'register',component:AddCustomerComponent}
+  {path:'register',component:AddCustomerComponent},
+  {path:'list-user',component:ListUserComponent}
 ]
 
 @NgModule({
