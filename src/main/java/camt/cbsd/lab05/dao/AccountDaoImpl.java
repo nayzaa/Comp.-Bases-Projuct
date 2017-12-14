@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import javax.annotation.PostConstruct;
 import java.util.List;
 
-@Profile("firstDataSource")
-@ConfigurationProperties(prefix = "server")
-@Repository
+//@Profile("firstDataSource")
+//@ConfigurationProperties(prefix = "server")
+//@Repository
 public class AccountDaoImpl implements AccountDao {
 
     List<Account> accounts;

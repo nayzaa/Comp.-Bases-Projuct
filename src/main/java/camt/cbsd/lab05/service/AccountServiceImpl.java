@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 
-@ConfigurationProperties(prefix = "server")
+//@ConfigurationProperties(prefix = "server")
 @Service
 public class AccountServiceImpl implements AccountService {
     String imageBaseUrl;

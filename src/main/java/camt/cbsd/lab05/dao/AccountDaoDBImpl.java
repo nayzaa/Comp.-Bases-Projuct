@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-@Profile("DBDataSource")
+//@Profile("DBDataSource")
 public class AccountDaoDBImpl implements AccountDao {
     AccountRepository accountRepository;
     @Autowired

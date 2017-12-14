@@ -22,7 +22,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 
-@ConfigurationProperties(prefix = "server")
+//@ConfigurationProperties(prefix = "server")
 @Component
 public class DataLoader implements ApplicationRunner {
     AccountDao accountDao;

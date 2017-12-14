@@ -1,8 +1,6 @@
 spring:
   profiles:
-    active:
-    - sandbox
-    - DBDataSource
+    active: sandbox
   http:
     multipart:
       max-file-size: 10MB
@@ -44,13 +42,16 @@ server:
 spring:
   profiles: sandbox
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgres://phgtwjpg:pkn546ll80S6-5tNW9iFK4DWZWsZy2GQ@baasu.db.elephantsql.com:5432/phgtwjpg
-    username: phgtwjpg
-    password: pkn546ll80S6-5tNW9iFK4DWZWsZy2GQ
-    tomcat:
-      max-active: 2
-
   jpa:
-    generate-ddl: true
+      database: POSTGRESQL
+      show-sql: true
+      hibernate:
+        ddl-auto: create-drop
+  datasource:
+      platform: postgres
+      url: jdbc:postgresql://baasu.db.elephantsql.com:5432/phgtwjpg?useUnicode=true&characterEncoding=utf8
+      username: phgtwjpg
+      password: pvMWuLAtSNFjMEakyDY1EyzhrDcahiZp
+      driverClassName: org.postgresql.Driver
+      tomcat:
+          max-active: 2
