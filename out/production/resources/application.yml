@@ -1,6 +1,8 @@
 spring:
   profiles:
-    active: sandbox
+    active:
+    - sandbox
+    - DBDataSource
   http:
     multipart:
       max-file-size: 10MB
