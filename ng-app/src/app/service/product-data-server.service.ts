@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Rx';
 import {Http,Headers, RequestOptions,Response} from '@angular/http';
 import {Product} from '../product';
 import {reject} from 'q';
+import {SlipImage} from '../payment/tranfer-money/slip';
 
 @Injectable()
 export class ProductDataServerService {
@@ -31,6 +32,28 @@ export class ProductDataServerService {
           return Observable.throw(new Error(error.status))
         })
     })
+
+
+  }
+  addSlip(product:SlipImage,file:any):Observable<SlipImage>{
+
+    const  formData = new FormData();
+    let fileName : string;
+    formData.append('file',file);
+    return this.http.post('http://localhost:8080/upload/product',formData).flatMap(fileName=>{
+      product.image = fileName.text();
+      let headers = new Headers({'Content-Type': 'application/json'});
+      let options = new RequestOptions({headers: headers, method: 'post'});
+      let body = JSON.stringify(product);
+      return this.http.post('http://localhost:8080/product', body, options)
+        .map(res => {
+          return res.json()
+        })
+        .catch((error: any) => {
+          return Observable.throw(new Error(error.status))
+        })
+    })
+
 
 
   }
