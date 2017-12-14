@@ -22,9 +22,9 @@ export class ListUserComponent implements OnInit {
         this.result = params['result'];
       });
   }
-  delete(userdetail : UserDetail){
+  delete(id : number){
     let result : UserDetail;
-    this.userService.delete(userdetail)
+    this.userService.delete(id)
       .subscribe(resultProduct => {
         result = resultProduct
         if (result != null) {
