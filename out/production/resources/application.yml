@@ -1,8 +1,6 @@
 spring:
   profiles:
-    active:
-      - DBDataSource
-      - inMemoryDB
+    active: sandbox
   http:
     multipart:
       max-file-size: 10MB
@@ -40,3 +38,17 @@ spring:
 server:
   baseUrl: http://localhost:8080/
   imageUrl: images/
+---
+spring:
+  profiles: sandbox
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgres://phgtwjpg:pkn546ll80S6-5tNW9iFK4DWZWsZy2GQ@baasu.db.elephantsql.com:5432/phgtwjpg
+    username: phgtwjpg
+    password: pkn546ll80S6-5tNW9iFK4DWZWsZy2GQ
+    tomcat:
+      max-active: 2
+
+  jpa:
+    generate-ddl: true

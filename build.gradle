@@ -38,5 +38,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-rest")
 	compile("org.springframework.mobile:spring-mobile-device")
 	compile 'org.springframework.security:spring-security-web:5.0.0.RELEASE'
+	compile group: 'postgresql', name: 'postgresql', version: '9.3-1102.jdbc41'
+
 }
 
