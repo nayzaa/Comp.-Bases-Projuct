@@ -63,7 +63,7 @@ public class AuthenticationRestController {
 
         // Return the token
 //        return ResponseEntity.ok(new JwtAuthenticationResponse(token));
-        Account account = accountService.getStudentForTransfer(authenticationRequest.getUsername());
+        Account account = accountService.getAccountForTransfer(authenticationRequest.getUsername());
         Map result = new HashMap();
         result.put("token",token);
         result.put("account", account);

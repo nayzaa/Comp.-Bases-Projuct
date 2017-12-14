@@ -24,6 +24,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 import { CartViewComponent } from './cart/cart-view/cart-view.component';
 import {CartService} from './service/cart.service';
+import {UserService} from './service/user.service';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import {CartService} from './service/cart.service';
   imports: [
     BrowserModule,AppRoutingModule,HttpModule,FormsModule
   ],
-  providers: [ProductDataServerService,AuthenticationService,CartService],
+  providers: [ProductDataServerService,AuthenticationService,CartService,UserService],
   bootstrap: [AppComponent,HeaderComponent]
 })
 export class AppModule { }

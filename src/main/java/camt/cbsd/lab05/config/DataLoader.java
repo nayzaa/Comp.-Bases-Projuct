@@ -122,9 +122,6 @@ public class DataLoader implements ApplicationRunner {
         user1 = User.builder()
                 .username("admin")
                 .password("admin")
-                .firstname("admin")
-                .lastname("admin")
-                .email("admin@admin.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
@@ -132,18 +129,12 @@ public class DataLoader implements ApplicationRunner {
         user2 = User.builder()
                 .username("shopkeeper")
                 .password("shopkeeper")
-                .firstname("user")
-                .lastname("user")
-                .email("enabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
         user3 = User.builder()
                 .username("customer")
                 .password("customer")
-                .firstname("user")
-                .lastname("user")
-                .email("disabled@user.com")
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2016,01,01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();

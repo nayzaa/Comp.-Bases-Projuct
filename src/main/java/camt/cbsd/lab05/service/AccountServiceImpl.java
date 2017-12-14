@@ -32,7 +32,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     AccountDao accountDao;
-    public List<Account> getStudents(){
+    public List<Account> getAccounts(){
 
         return accountDao.getAccounts();
     }
@@ -52,9 +52,14 @@ public class AccountServiceImpl implements AccountService {
 
     @Transactional
     @Override
-    public Account getStudentForTransfer(String username) {
+    public Account getAccountForTransfer(String username) {
         Account account = accountDao.findByUsername(username);
 //        Hibernate.initialize(account.getAuthorities());
         return account;
+    }
+
+    @Override
+    public void delete(Account account) {
+            accountDao.delete(account);
     }
 }

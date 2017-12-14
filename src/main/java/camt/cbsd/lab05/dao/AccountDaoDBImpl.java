@@ -44,4 +44,9 @@ public class AccountDaoDBImpl implements AccountDao {
         return (int) accountRepository.count();
     }
 
+    @Override
+    public void delete(Account account) {
+        accountRepository.delete(account);
+    }
+
 }
