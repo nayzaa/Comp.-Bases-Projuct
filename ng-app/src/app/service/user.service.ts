@@ -23,11 +23,11 @@ export class UserService {
         })
     }
 
-  delete(userDetail:UserDetail){
+  delete(id:number){
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers, method: 'post'});
-    let body = JSON.stringify(userDetail);
-    return this.http.post('http://localhost:8080/account/delete', body, options)
+    // let body = JSON.stringify(userDetail);
+    return this.http.post('http://localhost:8080/account/delete/'+id, options)
       .map(res => {
         return res.json()
       })

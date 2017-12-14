@@ -78,8 +78,7 @@
       <td>
         <br>
         <a routerLink="/index"><button class="btn btn-primary">Continue Shopping</button></a>
-        <a routerLink="/confirm"><button class="btn btn-success" [disabled]="!hasRole('CUSTOMER')">Check out </button></a>
-        <span *ngIf="!hasRole('CUSTOMER')">Please login before checkout.</span>
+        <a routerLink="/confirm"><button class="btn btn-success">Check out </button></a>
       </td>
       <td></td>
 

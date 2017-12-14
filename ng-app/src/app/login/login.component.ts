@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   model: any = {};
   loading = false;
   error = '';
+  source = '';
 
   constructor(
     private router: Router,
@@ -21,24 +22,22 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     //reset login status
-    // this.authenticationService.logout();
 
-    if(this.authenticationService.loggedIn()){
-      this.router.navigate(['index']);
-    }
-
-    let source: String;
     this.route.queryParams.subscribe(
       params => {
         if (params['source'])
-          source = params['source'];
+          this.source = params['source'];
         else
-          source = null;
+          this.source = null;
       }
     );
+    if (this.source) {
+      this.authenticationService.logout();
+      this.error = `Please login as customer before use ${this.source} page.`;
+    }
 
-    if (source) {
-      this.error = `Please login before use ${source} page.`;
+    if(this.authenticationService.loggedIn()){
+      this.router.navigate(['index']);
     }
   }
 
@@ -48,7 +47,11 @@ export class LoginComponent implements OnInit {
       .subscribe(result => {
         if (result === true) {
           //login success
-          this.router.navigate(['index']);
+          if (this.source){
+            this.router.navigate(['confirm']);
+          }else {
+            this.router.navigate(['index']);
+          }
         } else {
           //login failed
           this.error = 'Username or password is incorrect';

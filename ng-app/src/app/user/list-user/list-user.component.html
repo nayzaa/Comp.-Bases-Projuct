@@ -19,9 +19,9 @@
       <td>{{accounts.user.username}}</td>
       <td>{{accounts.name}}</td>
       <td>{{accounts.surname}}</td>
-      <td>{{accounts.user.authorities[0]}}</td>
+      <td>{{accounts.authorities[0].name}}</td>
       <td>
-        <button class="btn btn-danger" (click)="delete(userDetail)"  >
+        <button class="btn btn-danger" (click)="delete(accounts.id)" *ngIf="accounts.authorities[0].name != 'ROLE_ADMIN'"  >
           <span class="glyphicon glyphicon-remove"></span>
         </button>
       </td>

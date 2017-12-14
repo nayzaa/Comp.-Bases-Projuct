@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Item} from '../../item';
+import {AuthenticationService} from "app/service/authentication.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-confirm-checkout',
@@ -10,9 +12,12 @@ export class ConfirmCheckoutComponent implements OnInit {
 
   items: Item[] =[];
 
-  constructor() { }
+  constructor(private authenService: AuthenticationService,private router:Router) { }
 
   ngOnInit() {
+    if(!this.hasRole("CUSTOMER")){
+      this.router.navigate(['login'],{queryParams:{source:'checkout'}});
+    }
     this.items = JSON.parse(localStorage.getItem("cart"))
   }
 
@@ -26,5 +31,9 @@ export class ConfirmCheckoutComponent implements OnInit {
     } else {
       return null;
     }
+  }
+
+  hasRole(role:string) {
+    return this.authenService.hasRole(role);
   }
 }
